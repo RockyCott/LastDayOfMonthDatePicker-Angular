@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-form-field appearance="fill" class="formControl">
+    <mat-label> Ultimo día </mat-label>
+    <input
+      matInput
+      formControlName="lastDay"
+      [matDatepicker]="picker"
+      [matDatepickerFilter]="isLastDayOfMonth"
+    />
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="picker"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #picker color="primary"></mat-datepicker>
+    <mat-error *ngIf="lastDay.invalid">
+      No se permite esta fecha
+    </mat-error>
+  </mat-form-field>
+</div>
+
